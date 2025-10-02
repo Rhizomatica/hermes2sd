@@ -1,15 +1,13 @@
 #!/bin/bash
 # custom-setup.sh - Script personalizado para instalações
 
-echo "=== Configurando SSH e instalando pacotes ==="
-
-# Instalar e habilitar SSH
-apt-get update
-apt-get install -y openssh-server vim curl wget git htop tree net-tools tar gzip
-
-# Habilitar SSH
-systemctl enable ssh
-echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
+echo "=== Iniciando configuração personalizada ==="
+if ! command -v wget &> /dev/null
+then
+    echo "wget could not be found, installing..."
+    apt-get update
+    apt-get install -y wget
+fi
 
 echo "=== Download e extração de arquivo ==="
 
@@ -41,7 +39,7 @@ download_and_extract() {
         
         # Extrair
         echo "📦 Extraindo para: $destination"
-        if tar -xzf "/tmp/$filename" -C "$destination"; then
+        if tar -xzvf "/tmp/$filename" -C "$destination"; then
             echo "✅ Extração concluída!"
             
             # Mostrar o que foi extraído

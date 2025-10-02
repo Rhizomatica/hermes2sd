@@ -13,13 +13,19 @@ fi
 
 ./sdm --customize $1 \
       --host $2 \
-      --logwidth 132 \
       --regen-ssh-host-keys \
       --cscript custom_setup.sh \
-      --extend --xmb 11000 \
-      --plugin user:"deluser=pi" \
-      --plugin user:"adduser=pi|password=hermes" \
-      --groups "sudo,video,adm,dialout,cdrom,audio,plugdev,games,users,input,render,netdev,spi,gpio,i2c,ssl-cert" \
-      --plugin apps:"apps=ssl-cert|name=ssl-cert" \
-      --plugin disables:"triggerhappy" \
-      --plugin L10n:"timezone=America/Sao_Paulo|locale=en_US.UTF-8"
+      --batch
+#       --logwidth 132 \
+#      --plugin system:"expand-rootfs=onfirstboot" \
+#      --plugin system:"ssh-enable=true" \
+#      --plugin system:"ssh-passwordauth=true" \
+#      --plugin system:"ssh-permitrootlogin=true" \
+#
+#       --extend --xmb 11000 \
+#      --plugin user:"deluser=pi" \
+#      --plugin user:"adduser=pi|password=hermes" \
+#      --groups "sudo,video,adm,dialout,cdrom,audio,plugdev,games,users,input,render,netdev,spi,gpio,i2c,ssl-cert" \
+#      --plugin apps:"apps=ssl-cert|name=ssl-cert" \
+#      --plugin disables:"triggerhappy" \
+#      --plugin L10n:"timezone=America/Sao_Paulo|locale=en_US.UTF-8"
