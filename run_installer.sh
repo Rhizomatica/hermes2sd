@@ -24,12 +24,13 @@ fi
       --plugin user:"adduser=pi|password=hermes" \
       --plugin disables:"triggerhappy" \
       --plugin L10n:"timezone=America/Sao_Paulo|locale=en_US.UTF-8" \
-#      --plugin system:"service-disable=apt-daily.timer,apt-daily-upgrade.timer" \
+      --batch
+      #      --plugin system:"service-disable=apt-daily.timer,apt-daily-upgrade.timer" \
 #      --plugin system:"expand-rootfs=onfirstboot" \
 #      --plugin system:"ssh-enable=true" \
 #      --plugin system:"ssh-passwordauth=true" \
 #      --plugin system:"ssh-permitrootlogin=true" \
-      --batch
+
 #      --restart
 
       #      --reboot 20
